@@ -1,0 +1,37 @@
+<!doctype html>{% load staticfiles %}
+<head>
+  <title>Buisnesses</title>
+
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+<head>
+<body>
+  <div class="container">
+    <h1>Eventio</h1>
+    <h2>Events List</h2>
+
+    {% for location in locations %}
+      <div>
+        <h3>{{ location.name }}</h3>
+        <p>{{ location.description }}</p>
+        <dl>
+          <dt>Hours:</dt>
+          <dd>{{ location.hours }}</dd>
+          <dt>Where:</dt>
+          <dd>{{ location.location }}</dd>
+          {% if location.menu %}
+            <dt>menu:</dt>
+            <dd>
+                {{location.menu}}
+            </dd>
+          {%endif%}
+          {% if location.website %}
+            <dt>Website:</dt>
+            <dd>
+                ${{location.website}}
+            </dd>
+          {%endif%}
+        </dl>
+      </div>
+    {% endfor %}
+  </div>
+</body>
