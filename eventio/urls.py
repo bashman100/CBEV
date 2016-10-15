@@ -24,5 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home),
     url(r'^events/$', events),
-    url(r'^buisnesses/$', locations),
+    url(r'^businesses/$', locations),
+    url(r'^business/(?P<pk>\d+)/$', business, name='business'),
+    url(r'^event/(?P<pk>\d+)/$', event_details, name='event'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,18 +1,13 @@
-<!doctype html>{% load staticfiles %}
-<head>
-  <title>Buisnesses</title>
-
-  <link rel="stylesheet" href="{% static 'css/app.css' %}">
-<head>
-<body>
-  <div class="container">
-    <h1>Eventio</h1>
+{% extends '_partials/base.html' %}
+{% block title %}Businesses{% endblock %}
+{% block content %}
+    <h1>The Businesses</h1>
     <h2>Events List</h2>
 
     {% for location in locations %}
       <div>
-        <h3>{{ location.name }}</h3>
-        <p>{{ location.description }}</p>
+        <h3><a href="{% url 'business' pk=location.pk %}" class="name">{{ location.name }}</a></h3>
+        <p>{{ location.description|truncatewords:10}}</p>
         <dl>
           <dt>Hours:</dt>
           <dd>{{ location.hours }}</dd>
@@ -33,5 +28,4 @@
         </dl>
       </div>
     {% endfor %}
-  </div>
-</body>
+{% endblock %}

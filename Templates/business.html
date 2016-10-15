@@ -1,0 +1,25 @@
+{% extends '_partials/base.html' %}
+{% block title %}{{location.name}}{% endblock %}
+{% block content %}
+    <h3>{{ location.name }}</h3>
+    <p>
+      {% if location.capacity %}
+      Capacity: {{ location.capacity}}
+      {% endif %}
+    </p>
+    <p>{{ location.description }}</p>
+    <dl>
+      <dt>When:</dt>
+      <dd>{{ location.start_time }}</dd>
+      <dt>Where:</dt>
+      <dd>{{ location.location }}</dd>
+      <dt>Price:</dt>
+      <dd>
+        {% if location.price %}
+          ${{location.price}}
+        {% else %}
+          Free
+        {% endif %}
+      </dd>
+    </dl>
+{% endblock content %}

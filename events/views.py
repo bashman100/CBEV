@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import *
 
 # Create your views here.
@@ -12,3 +12,9 @@ def locations(request):
     return render(request, 'locations.html', {'locations': locations})
 def home(request):
     return render(request, 'index.html')
+def business(request, pk):
+    location = get_object_or_404(Location, pk=pk)
+    return render(request, 'business.html', {'location': location})
+def event_details(request, pk):
+    event = get_object_or_404(Event, pk=pk)
+    return render(request, 'event_details.html', {'event': event})

@@ -1,0 +1,17 @@
+<!doctype html>{% load staticfiles %}
+<head>
+  <title>{%block title%}{%endblock%}</title>
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+<head>
+<body>
+  <nav>
+    <div class="container">
+      <a class="title" href="/">Home</a>
+      <a class="title" href="/businesses">Business</a>
+      <a class="title" href="/events">Events</a>
+    </div>
+  </nav>
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+</body>
