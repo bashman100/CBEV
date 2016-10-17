@@ -15,6 +15,7 @@ class Location(models.Model):
     description = models.TextField()
     hours = models.CharField(max_length=50)
     location = models.CharField(max_length=255)
+    location_address = models.TextField(null=True, blank=True)
     menu_up = models.FileField(null=True, blank=True, upload_to='uploads/menus')
     menu = models.FilePathField(path='uploads/menus', recursive=False, max_length=100, blank=True, null=True)
     website = models.URLField(max_length=200, blank=True)

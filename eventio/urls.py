@@ -27,4 +27,4 @@ urlpatterns = [
     url(r'^businesses/$', locations),
     url(r'^business/(?P<pk>\d+)/$', business, name='business'),
     url(r'^event/(?P<pk>\d+)/$', event_details, name='event'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

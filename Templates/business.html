@@ -13,13 +13,5 @@
       <dd>{{ location.start_time }}</dd>
       <dt>Where:</dt>
       <dd>{{ location.location }}</dd>
-      <dt>Price:</dt>
-      <dd>
-        {% if location.price %}
-          ${{location.price}}
-        {% else %}
-          Free
-        {% endif %}
-      </dd>
     </dl>
 {% endblock content %}
